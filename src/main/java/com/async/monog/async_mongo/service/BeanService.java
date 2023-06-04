@@ -6,4 +6,6 @@ public interface BeanService {
     void generateMany();
 
     void clear();
+
+    void generateOne();
 }

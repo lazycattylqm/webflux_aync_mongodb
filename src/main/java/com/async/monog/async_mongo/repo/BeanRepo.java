@@ -10,5 +10,7 @@ public interface BeanRepo {
 
     void insertMany(List<TestBean> list);
 
+    void insertOne(TestBean bean);
+
     void clear();
 }

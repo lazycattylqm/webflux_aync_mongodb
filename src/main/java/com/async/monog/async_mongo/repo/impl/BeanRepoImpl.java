@@ -24,9 +24,17 @@ public class BeanRepoImpl implements BeanRepo {
 
     }
 
+
+
     @Override
     public void insertMany(List<TestBean> list) {
         template.insertAll(list)
+                .subscribe();
+    }
+
+    @Override
+    public void insertOne(TestBean bean) {
+        template.insert(bean)
                 .subscribe();
     }
 

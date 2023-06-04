@@ -28,4 +28,9 @@ public class MongoController {
     public void clear() {
         service.clear();
     }
+
+    @GetMapping("/one")
+    public void generateOne() {
+        service.generateOne();
+    }
 }

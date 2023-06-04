@@ -41,6 +41,13 @@ public class BeanServiceImpl implements BeanService {
         repo.clear();
     }
 
+    @Override
+    public void generateOne() {
+        TestBean testBean = new TestBean();
+        testBean.setDesc(RandomStringUtils.random(10, true, false));
+        repo.insertOne(testBean);
+    }
+
     private List<TestBean> randomMany() {
         return Stream.iterate(0, i -> i + 1)
                 .limit(1000)
