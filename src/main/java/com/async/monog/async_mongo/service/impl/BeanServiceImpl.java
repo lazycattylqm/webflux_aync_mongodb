@@ -31,7 +31,7 @@ public class BeanServiceImpl implements BeanService {
     @Override public void generateMany() {
         Stream.iterate(0, i -> i + 1)
                 .limit(1000)
-                .forEach(i->{
+                .forEach(i -> {
                     List<TestBean> testBeans = randomMany();
                     repo.insertMany(testBeans);
                 });

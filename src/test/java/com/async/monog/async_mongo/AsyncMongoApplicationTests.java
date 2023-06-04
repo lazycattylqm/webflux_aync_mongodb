@@ -5,27 +5,25 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.print.attribute.standard.Severity;
-
 @SpringBootTest
 class AsyncMongoApplicationTests {
 
-	@Autowired
-	BeanService service;
+    @Autowired
+    BeanService service;
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
-	@Test
-	void run() {
-		service.generateMany();
-		service.showAll();
+    @Test
+    void run() {
+        service.generateMany();
+        service.showAll();
 
-	}
+    }
 
-	void run2() {
-		service.clear();
-	}
+    void run2() {
+        service.clear();
+    }
 
 }

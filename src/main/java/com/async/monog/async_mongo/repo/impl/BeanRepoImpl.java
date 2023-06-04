@@ -2,7 +2,6 @@ package com.async.monog.async_mongo.repo.impl;
 
 import com.async.monog.async_mongo.model.TestBean;
 import com.async.monog.async_mongo.repo.BeanRepo;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.ReactiveRemoveOperation;
 import org.springframework.stereotype.Repository;
@@ -27,12 +26,14 @@ public class BeanRepoImpl implements BeanRepo {
 
     @Override
     public void insertMany(List<TestBean> list) {
-        template.insertAll(list).subscribe();
+        template.insertAll(list)
+                .subscribe();
     }
 
     @Override
     public void clear() {
         ReactiveRemoveOperation.ReactiveRemove<TestBean> remove = template.remove(TestBean.class);
-        remove.all().subscribe();
+        remove.all()
+                .subscribe();
     }
 }
